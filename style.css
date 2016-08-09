@@ -1,0 +1,45 @@
+h2 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 400px;
+  margin: 20px 30px;
+}
+.form {
+  width: 46%;
+  padding: 20px;
+}
+.form__fld-input {
+  display: block;
+  margin-bottom: 10px;
+}
+.form__fld-input--h200 {
+  height: 200px;
+}
+.form__btn-crt-gist {
+  display: block;
+  margin-bottom: 20px;
+}
+.form__msg {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.msg__row {
+  display: flex;
+  justify-content: flex-end;
+}
+.msg__title {
+  margin: 2px 20px 2px 0;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.msg__content {
+  flex-basis: 80%;
+  overflow: hidden;
+  margin: 2px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
