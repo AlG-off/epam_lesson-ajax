@@ -1,14 +1,14 @@
 ;(function () {
     //Event
-    var inputFld = document.getElementById("inputSrchRep");
+    var inputFld = document.getElementById("inputSrchRep"),
+        xhr;
 
     inputFld.addEventListener("keyup", _.debounce(getTopRepository, 400));
 
     /*****Функция для поиска ТОР3 репозиториев*****/
     function getTopRepository(e) {
         "use strict"
-        var val = e.target.value,
-            xhr;
+        var val = e.target.value;
 
         if(val.length < 3) return;
 
@@ -44,7 +44,7 @@
             fldOutReps.setAttribute("id", "fldOutReps");
             fldOutReps.classList.add("form__fld-out");
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < reps.length && i < 3; i++) {
                 var div = document.createElement("div"),
                     rep = reps[i];
 
