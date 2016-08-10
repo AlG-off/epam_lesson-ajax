@@ -13,10 +13,14 @@ h2 {
 }
 .form__fld-input {
   display: block;
+  width: 240px;
   margin-bottom: 10px;
 }
 .form__fld-input--h200 {
   height: 200px;
+}
+.form__fld-input--w340 {
+  width: 340px;
 }
 .form__btn-crt-gist {
   display: block;
