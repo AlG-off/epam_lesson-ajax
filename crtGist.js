@@ -17,23 +17,23 @@
                 }
             };
 
-        sendPOSTRequest(objRequest, procesRequest);
+        sendPOSTRequest(objRequest, processResponse);
         
         //Функция отправки POST запроса на создание gist
-        function sendPOSTRequest(request, procesRequest) {
+        function sendPOSTRequest(request, processResponse) {
             var xhr = new XMLHttpRequest(),
                 url = "https://api.github.com/gists";
 
             xhr.open("POST", url, true);
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 201) {
-                    procesRequest(xhr.responseText);
+                    processResponse(xhr.responseText);
                 };
             };
             xhr.send(JSON.stringify(request));
         };
         //Функция обработки POST запроса
-        function procesRequest (strJson) {
+        function processResponse (strJson) {
             var url = JSON.parse(strJson)["html_url"],
                 fldOutLink = document.getElementById("fldOutLink"),
                 a = document.createElement("a");

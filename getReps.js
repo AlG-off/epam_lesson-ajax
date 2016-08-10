@@ -12,10 +12,10 @@
 
         if(val.length < 3) return;
 
-        sendGETRequest(val, procesRequest);
+        sendGETRequest(val, processResponse);
 
         //Функция отправки GET запроса на получение репозиториев
-        function sendGETRequest(request, procesRequest) {
+        function sendGETRequest(request, processResponse) {
             if(xhr) xhr.abort();
 
             var url = "https://api.github.com/search/repositories?q=" + request + "&sort=stars&order=desc";
@@ -24,14 +24,14 @@
             xhr.open("GET", url, true);
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === 4 && xhr.status === 200) {
-                    procesRequest(xhr.responseText);
+                    processResponse(xhr.responseText);
                 };
             };
             xhr.send();
         };
 
         //Функция обработки результата GET запроса
-        function procesRequest (strJson) {
+        function processResponse (strJson) {
             var reps = JSON.parse(strJson).items,
                 fldOutReps = document.getElementById("fldOutReps"),
                 formSndRequest = document.getElementById("formSndRequest"),
